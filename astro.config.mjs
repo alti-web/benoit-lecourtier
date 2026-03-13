@@ -4,5 +4,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://lecourtier.net',
+  site: 'https://alti-web.github.io',
+  base: '/benoit-lecourtier',
 });
