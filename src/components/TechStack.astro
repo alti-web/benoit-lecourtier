@@ -1,0 +1,68 @@
+---
+const categories = [
+  {
+    label: 'Frontend',
+    techs: [
+      { name: 'React', tooltip: 'Écosystème mature pour les apps complexes' },
+      { name: 'Next.js', tooltip: 'SSR, SSG et API routes — le couteau suisse React' },
+      { name: 'Astro', tooltip: 'Performances maximales pour les sites content-first' },
+      { name: 'Qwik', tooltip: 'Resumability pour un TTI quasi-instantané' },
+      { name: 'Solid.js', tooltip: 'Réactivité fine sans virtual DOM' },
+    ],
+  },
+  {
+    label: 'Styling',
+    techs: [
+      { name: 'Tailwind CSS', tooltip: 'Utility-first pour un développement rapide' },
+      { name: 'CSS Modules', tooltip: 'Scoping natif, zéro dépendance' },
+    ],
+  },
+  {
+    label: 'UI',
+    techs: [
+      { name: 'Syncfusion', tooltip: 'Suite complète de composants enterprise' },
+      { name: 'shadcn/ui', tooltip: 'Composants accessibles et personnalisables' },
+      { name: 'Custom', tooltip: 'Composants sur mesure selon vos besoins' },
+    ],
+  },
+  {
+    label: 'Outils',
+    techs: [
+      { name: 'TypeScript', tooltip: 'Typage statique pour un code fiable' },
+      { name: 'Vite', tooltip: 'Build ultra-rapide et HMR instantané' },
+      { name: 'htmx', tooltip: 'Interactivité sans framework côté client' },
+    ],
+  },
+  {
+    label: 'Déploiement',
+    techs: [
+      { name: 'Vercel', tooltip: 'CI/CD automatique, edge functions' },
+      { name: 'Cloudflare Pages', tooltip: 'CDN global, Workers pour le edge' },
+      { name: 'Docker', tooltip: 'Conteneurisation pour déploiements reproductibles' },
+    ],
+  },
+];
+---
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {categories.map((category, i) => (
+    <div class="fade-in" style={`transition-delay: ${i * 80}ms`}>
+      <h3 class="text-sm font-semibold uppercase tracking-wider text-accent dark:text-blue-400 mb-4">{category.label}</h3>
+      <div class="space-y-2">
+        {category.techs.map((tech) => (
+          <div class="group relative flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-default">
+            <div class="w-8 h-8 rounded-md bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-text-muted dark:text-text-dark-muted flex-shrink-0">
+              {tech.name.slice(0, 2)}
+            </div>
+            <span class="text-sm font-medium">{tech.name}</span>
+            <!-- Tooltip -->
+            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+              {tech.tooltip}
+              <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-gray-100" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>

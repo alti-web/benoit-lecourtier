@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Dashboard Analytics',
+    description: 'Application de visualisation de données en temps réel pour une PME toulonnaise. Interface intuitive avec graphiques interactifs, filtres avancés et export de rapports.',
+    image: '/projects/placeholder.svg',
+    techs: ['React', 'Next.js', 'Tailwind', 'Recharts'],
+    metric: 'Score Lighthouse 99',
+    url: '#',
+  },
+  {
+    title: 'Site vitrine Artisan',
+    description: 'Site ultra-performant pour un artisan local avec zéro JavaScript côté client. SEO optimisé, score parfait sur tous les Core Web Vitals.',
+    image: '/projects/placeholder.svg',
+    techs: ['Astro', 'Tailwind', 'MDX'],
+    metric: '0 KB de JS client',
+    url: '#',
+  },
+  {
+    title: 'App de réservation',
+    description: 'Interface de réservation interactive avec gestion de calendrier avancée, système de créneaux et notifications en temps réel.',
+    image: '/projects/placeholder.svg',
+    techs: ['React', 'TypeScript', 'Syncfusion'],
+    metric: 'TTI < 200ms',
+    url: '#',
+  },
+  {
+    title: 'Plateforme E-learning',
+    description: 'Plateforme de formation en ligne avec suivi de progression, quiz interactifs et espace administrateur complet.',
+    image: '/projects/placeholder.svg',
+    techs: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
+    metric: '98 Accessibilité',
+    url: '#',
+  },
+  {
+    title: 'App de gestion interne',
+    description: 'Application métier sur mesure pour la gestion de stocks, commandes et facturation avec tableaux de bord temps réel.',
+    image: '/projects/placeholder.svg',
+    techs: ['React', 'Syncfusion', 'Node.js'],
+    url: '#',
+  },
+  {
+    title: 'Landing page produit',
+    description: 'Page de lancement optimisée pour la conversion avec animations soignées et performances maximales.',
+    image: '/projects/placeholder.svg',
+    techs: ['Astro', 'Tailwind', 'GSAP'],
+    metric: 'Lighthouse 100',
+    url: '#',
+  },
+];
+---
+
+<BaseLayout title="Projets | lecourtier.net" description="Découvrez mes réalisations — applications web, sites performants et composants UI sur mesure.">
+
+  <section class="section-padding pt-32 md:pt-40">
+    <div class="container-narrow">
+      <div class="max-w-2xl mb-16 fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Projets</h1>
+        <p class="text-lg text-text-muted dark:text-text-dark-muted leading-relaxed">
+          Une sélection de projets qui illustrent mon approche : performances, expérience utilisateur et code propre.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, i) => (
+          <ProjectCard {...project} delay={i * 80} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

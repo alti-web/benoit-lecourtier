@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import TechStack from '../components/TechStack.astro';
+
+const projects = [
+  {
+    title: 'Dashboard Analytics',
+    description: 'Application de visualisation de données en temps réel pour une PME toulonnaise.',
+    image: '/projects/placeholder.svg',
+    techs: ['React', 'Next.js', 'Tailwind'],
+    metric: 'Score Lighthouse 99',
+    url: '#',
+  },
+  {
+    title: 'Site vitrine Artisan',
+    description: 'Site ultra-performant pour un artisan local avec zéro JavaScript côté client.',
+    image: '/projects/placeholder.svg',
+    techs: ['Astro', 'Tailwind', 'MDX'],
+    metric: '0 KB de JS client',
+    url: '#',
+  },
+  {
+    title: 'App de réservation',
+    description: 'Interface de réservation interactive avec gestion de calendrier avancée.',
+    image: '/projects/placeholder.svg',
+    techs: ['React', 'TypeScript', 'Syncfusion'],
+    metric: 'TTI < 200ms',
+    url: '#',
+  },
+];
+
+const services = [
+  {
+    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    title: 'Applications web',
+    description: 'SPAs, dashboards, apps métier — des interfaces riches et réactives avec React et Next.js.',
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
+    title: 'Sites performants',
+    description: "Sites vitrines, landing pages, blogs — ultra-rapides grâce à Astro et son architecture islands.",
+  },
+  {
+    icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5zM14 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5zM4 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4zM14 15a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-4z"/></svg>`,
+    title: 'Composants UI',
+    description: 'Systèmes de design, composants réutilisables, intégrations Syncfusion et Tailwind sur mesure.',
+  },
+];
+
+const steps = [
+  { number: '01', title: 'Cadrage', description: 'On définit ensemble les besoins fonctionnels et techniques' },
+  { number: '02', title: 'Prototypage', description: "Maquettes interactives et validation de l'architecture" },
+  { number: '03', title: 'Développement', description: 'Sprints courts, démos régulières, code versionné' },
+  { number: '04', title: 'Livraison', description: 'Déploiement, documentation, formation si nécessaire' },
+];
+---
+
+<BaseLayout title="Développeur web freelance à Toulon | lecourtier.net">
+
+  <!-- Hero Section -->
+  <section class="section-padding pt-32 md:pt-40">
+    <div class="container-narrow">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          Développeur web freelance
+          <span class="text-accent dark:text-blue-400"> à Toulon</span>
+        </h1>
+        <p class="text-lg md:text-xl text-text-muted dark:text-text-dark-muted leading-relaxed mb-10 max-w-2xl">
+          Je crée des applications web modernes, rapides et sur mesure avec React, Next.js et Astro.
+        </p>
+        <div class="flex flex-wrap gap-4 mb-16">
+          <a href="/contact" class="btn-primary">Parlons de votre projet</a>
+          <a href="/projets" class="btn-secondary">Voir mes projets</a>
+        </div>
+      </div>
+
+      <!-- Tech logos -->
+      <div class="fade-in">
+        <div class="flex flex-wrap items-center gap-8 mb-4">
+          {['React', 'Next.js', 'Astro'].map((tech) => (
+            <div class="tech-logo flex items-center gap-2 text-lg font-semibold text-text-muted dark:text-text-dark-muted">
+              <div class="w-8 h-8 rounded bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-bold">{tech[0]}</div>
+              {tech}
+            </div>
+          ))}
+        </div>
+        <div class="flex flex-wrap items-center gap-6">
+          {['Qwik', 'Solid.js', 'htmx', 'TypeScript', 'Vite', 'Tailwind', 'Syncfusion'].map((tech) => (
+            <span class="tech-logo text-sm text-text-muted dark:text-text-dark-muted opacity-50 hover:opacity-100 transition-opacity">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reassurance Banner -->
+  <section class="py-16 md:py-20 px-6 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800 transition-colors">
+    <div class="container-narrow">
+      <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+        <!-- Performance -->
+        <div class="fade-in flex items-start gap-4">
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 flex items-center justify-center text-accent dark:text-blue-400">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-text dark:text-text-dark mb-1">Performance</h3>
+            <p class="text-sm text-text-muted dark:text-text-dark-muted leading-relaxed">Des sites ultra-rapides, optimisés Core Web Vitals et pensés pour le SEO.</p>
+          </div>
+        </div>
+        <!-- Sur mesure -->
+        <div class="fade-in flex items-start gap-4" style="transition-delay: 100ms">
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 flex items-center justify-center text-accent dark:text-blue-400">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 6V4m0 2a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m-6 8a2 2 0 1 0 0-4m0 4a2 2 0 1 1 0-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 1 0 0-4m0 4a2 2 0 1 1 0-4m0 4v2m0-6V4"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-text dark:text-text-dark mb-1">Sur mesure</h3>
+            <p class="text-sm text-text-muted dark:text-text-dark-muted leading-relaxed">Chaque projet est unique. Je choisis la stack et l'approche adaptées à vos besoins.</p>
+          </div>
+        </div>
+        <!-- Paiement au résultat -->
+        <div class="fade-in flex items-start gap-4" style="transition-delay: 200ms">
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 flex items-center justify-center text-accent dark:text-blue-400">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-text dark:text-text-dark mb-1">Paiement au résultat</h3>
+            <p class="text-sm text-text-muted dark:text-text-dark-muted leading-relaxed">Vous ne payez que si le livrable vous satisfait. Zéro risque, zéro surprise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-padding bg-white dark:bg-transparent transition-colors" id="services">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Ce que je fais</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {services.map((service, i) => (
+          <div class="fade-in bg-white dark:bg-gray-800/50 rounded-xl p-8 border border-gray-100 dark:border-gray-700/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300" style={`transition-delay: ${i * 100}ms`}>
+            <div class="text-accent dark:text-blue-400 mb-4" set:html={service.icon} />
+            <h3 class="text-xl font-semibold mb-3">{service.title}</h3>
+            <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section-padding" id="projets">
+    <div class="container-narrow">
+      <div class="flex items-end justify-between mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold">Projets</h2>
+        <a href="/projets" class="text-accent dark:text-blue-400 text-sm font-medium hover:underline">
+          Voir tous les projets &rarr;
+        </a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, i) => (
+          <ProjectCard {...project} delay={i * 100} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-900/50 transition-colors" id="stack">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Stack technique</h2>
+      <TechStack />
+    </div>
+  </section>
+
+  <!-- Approach Section -->
+  <section class="section-padding" id="approche">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Mon approche</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        {steps.map((step, i) => (
+          <div class="fade-in text-center md:text-left relative" style={`transition-delay: ${i * 100}ms`}>
+            {i < steps.length - 1 && (
+              <div class="hidden md:block absolute top-6 left-[60%] w-[80%] h-px bg-gray-200 dark:bg-gray-700" />
+            )}
+            <div class="text-4xl font-bold text-accent/20 dark:text-blue-400/20 mb-2">{step.number}</div>
+            <h3 class="text-lg font-semibold mb-2">{step.title}</h3>
+            <p class="text-sm text-text-muted dark:text-text-dark-muted leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

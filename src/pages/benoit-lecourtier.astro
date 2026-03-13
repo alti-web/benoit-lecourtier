@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const parcours = [
+  {
+    periode: '2009 — Aujourd\'hui',
+    titre: 'Développeur web freelance',
+    lieu: 'Toulon, Var',
+    description: 'Conception et développement d\'applications web sur mesure. Architecture front-end, intégration d\'APIs, optimisation des performances. Plus de 170 projets livrés pour des TPE, PME et startups.',
+    techs: ['React', 'Next.js', 'Astro', 'TypeScript', 'Node.js'],
+  },
+  {
+    periode: '2006 — 2009',
+    titre: 'Développeur web en agence',
+    lieu: 'Toulon',
+    description: 'Développement de sites web et d\'applications métier. Environnements LAMP, intégration front-end, mise en production et maintenance.',
+    techs: ['PHP', 'MySQL', 'JavaScript', 'HTML/CSS'],
+  },
+  {
+    periode: '2003 — 2006',
+    titre: 'Formation ingénieur',
+    lieu: 'France',
+    description: 'Cursus d\'ingénieur avec spécialisation en informatique et développement logiciel. Bases solides en algorithmique, structures de données et architecture logicielle.',
+    techs: ['C', 'Java', 'SQL', 'UML'],
+  },
+];
+
+const competences = [
+  {
+    categorie: 'Front-end',
+    items: ['React', 'Next.js', 'Astro', 'TypeScript', 'Tailwind CSS', 'Qwik', 'Solid.js', 'htmx'],
+  },
+  {
+    categorie: 'Back-end & APIs',
+    items: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'PHP'],
+  },
+  {
+    categorie: 'Outils & DevOps',
+    items: ['Git', 'GitHub', 'Vite', 'Vercel', 'Netlify', 'Docker', 'CI/CD'],
+  },
+  {
+    categorie: 'Bases de données',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Supabase'],
+  },
+  {
+    categorie: 'Méthodologies',
+    items: ['Architecture composants', 'Design system', 'Tests unitaires', 'Performance web', 'Accessibilité'],
+  },
+];
+
+const chiffres = [
+  { valeur: '17+', label: 'années d\'expérience' },
+  { valeur: '170+', label: 'projets livrés' },
+  { valeur: '99', label: 'score Lighthouse moyen' },
+  { valeur: '<1s', label: 'temps de chargement cible' },
+];
+---
+
+<BaseLayout title="Benoit Lecourtier — Développeur web freelance à Toulon | lecourtier.net" description="Benoit Lecourtier, développeur web freelance à Toulon. 17 ans d'expérience, ingénieur de formation. React, Next.js, Astro, TypeScript.">
+
+  <!-- Hero -->
+  <section class="section-padding pt-32 md:pt-40">
+    <div class="container-narrow">
+      <div class="grid md:grid-cols-3 gap-16 items-start">
+
+        <!-- Identity -->
+        <div class="fade-in">
+          <div class="aspect-square bg-gray-200 dark:bg-gray-700 rounded-2xl mb-6 flex items-center justify-center">
+            <span class="text-6xl font-bold text-gray-400 dark:text-gray-500">BL</span>
+          </div>
+          <div class="space-y-2 text-sm text-text-muted dark:text-text-dark-muted">
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+              Toulon, Var (83)
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m-4 0h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
+              Freelance depuis 2009
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14z"/></svg>
+              Ingénieur de formation
+            </p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="md:col-span-2 fade-in" style="transition-delay: 100ms">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Benoit Lecourtier</h1>
+          <p class="text-lg text-accent dark:text-blue-400 font-medium mb-8">Développeur web freelance à Toulon</p>
+
+          <div class="prose prose-lg dark:prose-invert max-w-none space-y-6 text-text-muted dark:text-text-dark-muted leading-relaxed">
+            <p>
+              Ingénieur de formation, je conçois et développe des applications web depuis plus de 17 ans. Basé à Toulon, j'accompagne des TPE, PME et startups dans la création de solutions web performantes et maintenables.
+            </p>
+            <p>
+              Ma stack principale tourne autour de <strong class="text-text dark:text-text-dark">React</strong>, <strong class="text-text dark:text-text-dark">Next.js</strong> et <strong class="text-text dark:text-text-dark">Astro</strong>, avec TypeScript comme standard. Je choisis toujours l'outil adapté au contexte — d'un site statique ultra-rapide à une application métier complexe.
+            </p>
+            <p>
+              Ce qui guide mon travail : un code propre, des performances irréprochables et une architecture qui tient dans le temps. Chaque projet est pensé pour être maintenable, évolutif et rapide.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Chiffres -->
+  <section class="py-16 md:py-20 px-6 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-100 dark:border-gray-800 transition-colors">
+    <div class="container-narrow">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {chiffres.map((c, i) => (
+          <div class="fade-in text-center" style={`transition-delay: ${i * 80}ms`}>
+            <div class="text-3xl md:text-4xl font-bold text-accent dark:text-blue-400 mb-1">{c.valeur}</div>
+            <div class="text-sm text-text-muted dark:text-text-dark-muted">{c.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences techniques -->
+  <section class="section-padding" id="competences">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Compétences techniques</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {competences.map((cat, i) => (
+          <div class="fade-in bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-100 dark:border-gray-700/50" style={`transition-delay: ${i * 80}ms`}>
+            <h3 class="text-lg font-semibold mb-4 text-text dark:text-text-dark">{cat.categorie}</h3>
+            <div class="flex flex-wrap gap-2">
+              {cat.items.map((item) => (
+                <span class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-text-muted dark:text-text-dark-muted rounded-full">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-900/50 transition-colors" id="parcours">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Parcours</h2>
+      <div class="max-w-3xl mx-auto space-y-12">
+        {parcours.map((exp, i) => (
+          <div class="fade-in relative pl-8 border-l-2 border-gray-200 dark:border-gray-700" style={`transition-delay: ${i * 100}ms`}>
+            <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-accent dark:bg-blue-400 border-4 border-gray-50 dark:border-gray-900"></div>
+            <div class="text-sm text-accent dark:text-blue-400 font-medium mb-1">{exp.periode}</div>
+            <h3 class="text-xl font-semibold text-text dark:text-text-dark mb-1">{exp.titre}</h3>
+            <p class="text-sm text-text-muted dark:text-text-dark-muted mb-3">{exp.lieu}</p>
+            <p class="text-text-muted dark:text-text-dark-muted leading-relaxed mb-3">{exp.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {exp.techs.map((tech) => (
+                <span class="px-2 py-0.5 text-xs bg-accent/10 dark:bg-blue-400/10 text-accent dark:text-blue-400 rounded">{tech}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding">
+    <div class="container-narrow text-center">
+      <div class="fade-in max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Un projet technique ?</h2>
+        <p class="text-lg text-text-muted dark:text-text-dark-muted mb-8">Discutons de vos besoins et voyons comment je peux vous aider à construire quelque chose de solide.</p>
+        <a href="/contact" class="btn-primary">Parlons de votre projet</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

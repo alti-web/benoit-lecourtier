@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-astro@latest . --template minimal --no-install --no-git --typescript strict --yes)",
+      "Bash(cp -r /c/Users/benoi/projets/lecourtier.net/tender-trappist/* /c/Users/benoi/projets/lecourtier.net/)",
+      "Bash(cp /c/Users/benoi/projets/lecourtier.net/tender-trappist/.* /c/Users/benoi/projets/lecourtier.net/)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls node_modules/.bin/astro*)",
+      "Bash(wmic process:*)",
+      "Bash(tasklist /fi \"PID eq 780\" /v /fo list)",
+      "Bash(taskkill //PID 780 //F)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebSearch",
+      "Bash(git init:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

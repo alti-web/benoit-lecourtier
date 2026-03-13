@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="À propos | lecourtier.net" description="Développeur web freelance basé à Toulon. Découvrez mon parcours, ma vision et mon approche du développement web.">
+
+  <section class="section-padding pt-32 md:pt-40">
+    <div class="container-narrow">
+      <div class="grid md:grid-cols-3 gap-16">
+
+        <!-- Photo / Identity -->
+        <div class="fade-in">
+          <div class="aspect-square bg-gray-200 dark:bg-gray-700 rounded-2xl mb-6 flex items-center justify-center">
+            <span class="text-6xl font-bold text-gray-400 dark:text-gray-500">B</span>
+          </div>
+          <div class="space-y-2 text-sm text-text-muted dark:text-text-dark-muted">
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+              Toulon, Var (83)
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m-4 0h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg>
+              Freelance
+            </p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="md:col-span-2 fade-in" style="transition-delay: 100ms">
+          <h1 class="text-4xl md:text-5xl font-bold mb-8">À propos</h1>
+
+          <div class="prose prose-lg dark:prose-invert max-w-none space-y-6 text-text-muted dark:text-text-dark-muted leading-relaxed">
+            <p>
+              Je suis développeur web freelance basé à Toulon. Je conçois et développe des applications web modernes — des SPAs complexes aux sites vitrines ultra-performants.
+            </p>
+
+            <p>
+              Mon parcours m'a donné un double regard : technique et marketing. Avant de me consacrer entièrement au développement, j'ai travaillé dans le SEO et l'acquisition digitale. Ce background me permet de créer des sites qui ne sont pas seulement bien codés, mais aussi pensés pour la performance, la visibilité et la conversion.
+            </p>
+
+            <p>
+              Côté technique, je travaille principalement avec <strong class="text-text dark:text-text-dark">React</strong>, <strong class="text-text dark:text-text-dark">Next.js</strong> et <strong class="text-text dark:text-text-dark">Astro</strong>. Je m'intéresse aussi aux frameworks émergents comme Qwik et Solid.js — je choisis toujours l'outil le plus adapté au contexte du projet, pas celui qui est à la mode.
+            </p>
+
+            <p>
+              J'accorde une attention particulière à la qualité du code, aux performances web et à l'expérience utilisateur. Chaque projet est une occasion de livrer quelque chose dont je suis fier — et dont mes clients tirent une vraie valeur.
+            </p>
+
+            <p>
+              Je travaille en situation de handicap, ce qui n'a jamais été un frein — au contraire, ça m'a appris à optimiser mon organisation et à aller à l'essentiel dans chaque projet.
+            </p>
+
+            <h2 class="text-2xl font-bold text-text dark:text-text-dark !mt-12 !mb-4">Ce qui me différencie</h2>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="text-accent dark:text-blue-400 mt-1 flex-shrink-0">&#10003;</span>
+                <span><strong class="text-text dark:text-text-dark">Double profil dev + SEO</strong> — je code des sites performants ET visibles</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-accent dark:text-blue-400 mt-1 flex-shrink-0">&#10003;</span>
+                <span><strong class="text-text dark:text-text-dark">Stack moderne</strong> — React, Next.js, Astro, TypeScript, Tailwind</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-accent dark:text-blue-400 mt-1 flex-shrink-0">&#10003;</span>
+                <span><strong class="text-text dark:text-text-dark">Obsession performance</strong> — Core Web Vitals, Lighthouse, TTI</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-accent dark:text-blue-400 mt-1 flex-shrink-0">&#10003;</span>
+                <span><strong class="text-text dark:text-text-dark">Proximité</strong> — basé à Toulon, disponible pour des échanges en direct</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-text font-sans antialiased transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-surface-dark text-text-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 bg-accent text-white font-medium rounded-lg
+           hover:bg-accent-light transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-6 py-3 border-2 border-accent text-accent font-medium rounded-lg
+           hover:bg-accent hover:text-white transition-all duration-200;
+  }
+
+  .dark .btn-secondary {
+    @apply border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-surface-dark;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32 px-6;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tech logo hover */
+.tech-logo {
+  @apply grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300;
+}
+
+.dark .tech-logo {
+  @apply brightness-200 hover:brightness-100;
+}
