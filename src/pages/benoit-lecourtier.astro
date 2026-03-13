@@ -168,7 +168,7 @@ const chiffres = [
       <div class="fade-in max-w-2xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">Un projet technique ?</h2>
         <p class="text-lg text-text-muted dark:text-text-dark-muted mb-8">Discutons de vos besoins et voyons comment je peux vous aider à construire quelque chose de solide.</p>
-        <a href="/contact" class="btn-primary">Parlons de votre projet</a>
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/contact`} class="btn-primary">Parlons de votre projet</a>
       </div>
     </div>
   </section>

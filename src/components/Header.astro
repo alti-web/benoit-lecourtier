@@ -1,10 +1,11 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pathname = Astro.url.pathname;
 const navLinks = [
-  { href: '/', label: 'Accueil' },
-  { href: '/projets', label: 'Projets' },
-  { href: '/a-propos', label: 'À propos' },
-  { href: '/contact', label: 'Contact' },
+  { href: `${base}/`, label: 'Accueil' },
+  { href: `${base}/projets`, label: 'Projets' },
+  { href: `${base}/a-propos`, label: 'À propos' },
+  { href: `${base}/contact`, label: 'Contact' },
 ];
 ---
 

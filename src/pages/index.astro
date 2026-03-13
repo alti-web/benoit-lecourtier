@@ -70,8 +70,8 @@ const steps = [
           Je crée des applications web modernes, rapides et sur mesure avec React, Next.js et Astro.
         </p>
         <div class="flex flex-wrap gap-4 mb-16">
-          <a href="/contact" class="btn-primary">Parlons de votre projet</a>
-          <a href="/projets" class="btn-secondary">Voir mes projets</a>
+          <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/contact`} class="btn-primary">Parlons de votre projet</a>
+          <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/projets`} class="btn-secondary">Voir mes projets</a>
         </div>
       </div>
 
@@ -155,7 +155,7 @@ const steps = [
     <div class="container-narrow">
       <div class="flex items-end justify-between mb-16 fade-in">
         <h2 class="text-3xl md:text-4xl font-bold">Projets</h2>
-        <a href="/projets" class="text-accent dark:text-blue-400 text-sm font-medium hover:underline">
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/projets`} class="text-accent dark:text-blue-400 text-sm font-medium hover:underline">
           Voir tous les projets &rarr;
         </a>
       </div>
