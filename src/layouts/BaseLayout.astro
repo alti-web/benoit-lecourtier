@@ -42,7 +42,10 @@ const { title, description = 'Développeur web freelance à Toulon — React, Ne
       </button>
       <div id="callback-form" class="hidden absolute left-0 top-full mt-2 bg-gray-800 border border-gray-700 rounded-xl p-4 shadow-2xl w-72">
         <p class="text-sm text-gray-300 mb-3">Entrez votre numéro, je vous rappelle dans les minutes qui suivent.</p>
-        <form id="callback-form-el" class="flex gap-2">
+        <form id="callback-form-el" action="https://formsubmit.co/contact@lecourtier.net" method="POST" class="flex gap-2">
+          <input type="hidden" name="_subject" value="Demande de rappel immédiat" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://benoit-lecourtier.vercel.app/" />
           <input
             type="tel"
             id="callback-phone"
@@ -63,17 +66,6 @@ const { title, description = 'Développeur web freelance à Toulon — React, Ne
       // Callback sticker toggle
       document.getElementById('callback-toggle')?.addEventListener('click', () => {
         document.getElementById('callback-form')?.classList.toggle('hidden');
-      });
-
-      // Callback form submit via mailto
-      document.getElementById('callback-form-el')?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const phone = (document.getElementById('callback-phone') as HTMLInputElement)?.value;
-        if (phone) {
-          window.location.href = `mailto:contact@lecourtier.net?subject=Demande de rappel&body=Merci de me rappeler au ${encodeURIComponent(phone)}`;
-          document.getElementById('callback-success')?.classList.remove('hidden');
-          (document.getElementById('callback-form-el') as HTMLFormElement)?.reset();
-        }
       });
 
       // Fade-in on scroll

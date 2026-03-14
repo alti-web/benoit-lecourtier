@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Dashboard RH Toulon',
+    description: 'Tableau de bord RH complet pour une entreprise toulonnaise : suivi des congés, gestion des équipes et rapports automatisés.',
+    image: '/projects/placeholder-1.svg',
+    techs: ['React', 'Next.js', 'Tailwind', 'Prisma'],
+    metric: 'Score Lighthouse 99',
+  },
+  {
+    title: 'Site vitrine Menuisier',
+    description: 'Site ultra-rapide pour un menuisier du Var avec galerie photo, devis en ligne et zéro JavaScript côté client.',
+    image: '/projects/placeholder-2.svg',
+    techs: ['Astro', 'Tailwind', 'MDX'],
+    metric: '0 KB de JS client',
+  },
+  {
+    title: 'App Réservation Restaurant',
+    description: 'Système de réservation en ligne pour un restaurant de Toulon avec gestion des créneaux et notifications SMS.',
+    image: '/projects/placeholder-3.svg',
+    techs: ['React', 'TypeScript', 'Syncfusion'],
+    metric: 'TTI < 200ms',
+  },
+  {
+    title: 'Plateforme E-learning Maritime',
+    description: 'Formation en ligne pour les professionnels maritimes du port de Toulon. Suivi de progression et certifications.',
+    image: '/projects/placeholder-4.svg',
+    techs: ['Next.js', 'TypeScript', 'Tailwind', 'Prisma'],
+    metric: '98 Accessibilité',
+  },
+  {
+    title: 'Gestion de Flotte Navale',
+    description: 'Application métier pour la gestion de flotte de bateaux : maintenance, planning équipage et suivi GPS temps réel.',
+    image: '/projects/placeholder-5.svg',
+    techs: ['React', 'Syncfusion', 'Node.js', 'MapLibre'],
+    metric: '< 1s chargement',
+  },
+  {
+    title: 'Landing Page Startup IA',
+    description: 'Page de lancement optimisée pour la conversion avec animations soignées et formulaire de pré-inscription.',
+    image: '/projects/placeholder-6.svg',
+    techs: ['Astro', 'Tailwind', 'GSAP'],
+    metric: 'Lighthouse 100',
+  },
+  {
+    title: 'Portail Immobilier Var',
+    description: 'Plateforme de recherche immobilière avec filtres avancés, carte interactive et alertes email personnalisées.',
+    image: '/projects/placeholder-7.svg',
+    techs: ['Next.js', 'React', 'Tailwind', 'MapLibre'],
+    metric: '3s TTI mobile',
+  },
+  {
+    title: 'App Comptabilité PME',
+    description: 'Application de comptabilité simplifiée pour les PME : factures, devis, suivi de trésorerie et export comptable.',
+    image: '/projects/placeholder-8.svg',
+    techs: ['React', 'TypeScript', 'Syncfusion'],
+    metric: '99 Performance',
+  },
+  {
+    title: 'Blog Culinaire Provençal',
+    description: 'Blog de recettes provençales avec recherche par ingrédient, mode hors-ligne et temps de chargement ultra-rapide.',
+    image: '/projects/placeholder-9.svg',
+    techs: ['Astro', 'MDX', 'Tailwind'],
+    metric: '0.4s LCP',
+  },
+  {
+    title: 'Plateforme Event Toulon',
+    description: 'Agenda des événements toulonnais avec billetterie intégrée, système de favoris et partage social.',
+    image: '/projects/placeholder-10.svg',
+    techs: ['Next.js', 'React', 'Stripe', 'Tailwind'],
+    metric: '2000+ utilisateurs',
+  },
+  {
+    title: 'App Suivi Chantier',
+    description: 'Application mobile-first pour le suivi de chantiers BTP : photos, rapports journaliers et validation client.',
+    image: '/projects/placeholder-11.svg',
+    techs: ['React', 'TypeScript', 'PWA', 'Tailwind'],
+    metric: 'Fonctionne offline',
+  },
+  {
+    title: 'Site Médecin Généraliste',
+    description: 'Site professionnel avec prise de rendez-vous en ligne, informations pratiques et blog santé.',
+    image: '/projects/placeholder-12.svg',
+    techs: ['Astro', 'Tailwind', 'Calendly API'],
+    metric: 'Lighthouse 100',
+  },
+  {
+    title: 'Dashboard Logistique',
+    description: 'Tableau de bord logistique temps réel : suivi des livraisons, gestion des stocks et alertes automatiques.',
+    image: '/projects/placeholder-13.svg',
+    techs: ['React', 'Syncfusion', 'WebSocket', 'Node.js'],
+    metric: 'Temps réel < 50ms',
+  },
+  {
+    title: 'Marketplace Artisans Var',
+    description: 'Place de marché pour les artisans du Var avec profils, portfolio, avis clients et messagerie intégrée.',
+    image: '/projects/placeholder-14.svg',
+    techs: ['Next.js', 'TypeScript', 'Tailwind', 'Stripe'],
+    metric: '150+ artisans',
+  },
+  {
+    title: 'App Gestion Copropriété',
+    description: 'Outil de gestion pour syndics : votes en ligne, suivi des travaux, documents partagés et comptabilité.',
+    image: '/projects/placeholder-15.svg',
+    techs: ['React', 'TypeScript', 'Node.js', 'Prisma'],
+    metric: '97 Accessibilité',
+  },
+  {
+    title: 'Site École de Voile',
+    description: 'Site vitrine pour une école de voile toulonnaise : planning des cours, inscription en ligne et météo intégrée.',
+    image: '/projects/placeholder-16.svg',
+    techs: ['Astro', 'Tailwind', 'API Météo'],
+    metric: '0.3s FCP',
+  },
+  {
+    title: 'CRM Commercial',
+    description: 'CRM sur mesure pour une équipe commerciale : pipeline de ventes, relances automatiques et reporting.',
+    image: '/projects/placeholder-17.svg',
+    techs: ['React', 'Syncfusion', 'TypeScript', 'Supabase'],
+    metric: '+40% conversion',
+  },
+  {
+    title: 'Portail Patient Clinique',
+    description: 'Espace patient sécurisé : résultats d\'analyses, ordonnances, historique des consultations et téléconsultation.',
+    image: '/projects/placeholder-18.svg',
+    techs: ['Next.js', 'TypeScript', 'Tailwind'],
+    metric: 'RGPD compliant',
+  },
+  {
+    title: 'App Livraison Locale',
+    description: 'Application de livraison pour les commerces de proximité à Toulon : commande, suivi en temps réel et paiement.',
+    image: '/projects/placeholder-19.svg',
+    techs: ['React', 'MapLibre', 'Stripe', 'Node.js'],
+    metric: '500+ commandes/jour',
+  },
+  {
+    title: 'Site Architecte Intérieur',
+    description: 'Portfolio immersif pour un architecte d\'intérieur : galeries avant/après, formulaire de projet et blog déco.',
+    image: '/projects/placeholder-20.svg',
+    techs: ['Astro', 'Tailwind', 'GSAP'],
+    metric: 'Lighthouse 100',
+  },
+  {
+    title: 'Plateforme Coworking',
+    description: 'Réservation d\'espaces de coworking à Toulon : disponibilités en temps réel, abonnements et facturation.',
+    image: '/projects/placeholder-21.svg',
+    techs: ['Next.js', 'React', 'Stripe', 'Prisma'],
+    metric: '3 espaces gérés',
+  },
+  {
+    title: 'App Monitoring Serveur',
+    description: 'Dashboard de monitoring infrastructure : métriques temps réel, alertes configurables et historique de performances.',
+    image: '/projects/placeholder-22.svg',
+    techs: ['React', 'TypeScript', 'Recharts', 'WebSocket'],
+    metric: 'Uptime 99.99%',
+  },
+];
+---
+
+<BaseLayout title="Développement web à Toulon | 22 projets réalisés | Benoit Lecourtier" description="Développeur web freelance à Toulon. Découvrez 22 projets réalisés avec React, Next.js et Astro pour des entreprises du Var et de la région PACA.">
+
+  <section class="section-padding pt-32 md:pt-40">
+    <div class="container-narrow">
+      <div class="max-w-3xl mb-16 fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Développement web
+          <span class="text-blue-400">à Toulon</span>
+        </h1>
+        <p class="text-lg text-text-dark-muted leading-relaxed mb-4">
+          Développeur freelance basé à Toulon, je conçois des applications web modernes, rapides et sur mesure avec React, Next.js et Astro pour les entreprises du Var et de la région PACA.
+        </p>
+        <p class="text-text-dark-muted leading-relaxed">
+          <strong class="text-text-dark">22 projets livrés</strong> — sites vitrines, applications métier, dashboards, e-commerce et plateformes SaaS.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, i) => (
+          <ProjectCard {...project} delay={i * 50} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gray-900/50">
+    <div class="container-narrow text-center fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Un projet en tête ?</h2>
+      <p class="text-text-dark-muted text-lg mb-8 max-w-2xl mx-auto">
+        Discutons de votre projet. Paiement au résultat — vous ne payez que si le livrable vous satisfait.
+      </p>
+      <a href="/contact" class="btn-primary text-lg px-8 py-4">Parlons de votre projet</a>
+    </div>
+  </section>
+
+</BaseLayout>
