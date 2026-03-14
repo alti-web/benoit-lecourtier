@@ -1,0 +1,46 @@
+# Benoit Lecourtier — Développeur Web Frontend Freelance à Toulon
+
+> Développeur web freelance spécialisé React.js, Next.js et Astro JS, basé à Toulon (Var, 83). 8 ans d'expérience, 40+ missions réalisées avec une note de 5/5. Travailleur Indépendant Handicapé (TIH) — éligible à la déduction Agefiph/FIPHFP.
+
+## Expertise technique
+
+- **React.js** : SPAs, composants sur mesure, Design Systems (80+ composants), state management (Redux, Zustand), dashboards interactifs, TypeScript strict
+- **Next.js** : App Router, React Server Components, streaming SSR, API Routes, Server Actions, ISR, déploiement Vercel
+- **Astro JS** : Sites statiques ultra-rapides, zéro JS par défaut, Islands Architecture, Content Collections, Lighthouse 100/100
+- **Full-stack** : WebRTC, protocole TUS (uploads volumineux), intégrations API tierces, Prisma, Supabase
+
+## Réalisations clés
+
+- Refonte e-commerce Next.js 15 App Router avec Server Components et streaming SSR (−40% temps de chargement)
+- Design System 80+ composants React/TypeScript avec Syncfusion et Tailwind, monorepo Turborepo
+- Plateforme SaaS from scratch : uploads TUS +500 Mo, 6 APIs tierces, visioconférence WebRTC + Pipecat.ai
+- Refactoring TypeScript strict : 3 742 → 24 lignes (−99,4%), correction failles XSS (DOMPurify), bundle < 200 KB gzippé
+
+## Services
+
+- Applications web (SPAs, dashboards, apps métier)
+- Sites performants (vitrines, landing pages, blogs)
+- Composants UI et Design Systems
+- Paiement au résultat — vous ne payez que si le livrable vous satisfait
+
+## Avantage TIH / RSE
+
+En tant que Travailleur Indépendant Handicapé (TIH) avec RQTH, les entreprises de +20 salariés peuvent déduire jusqu'à 30% du coût de la prestation de leur contribution Agefiph ou FIPHFP.
+
+## Contact
+
+- Localisation : Toulon, Var (83) — France
+- Site : https://benoit-lecourtier.vercel.app
+- Contact : https://benoit-lecourtier.vercel.app/contact
+
+## Pages du site
+
+- [Accueil](https://benoit-lecourtier.vercel.app/)
+- [Projets](https://benoit-lecourtier.vercel.app/projets)
+- [Tous les projets](https://benoit-lecourtier.vercel.app/toulon-developpement)
+- [Développeur React.js Toulon](https://benoit-lecourtier.vercel.app/developpeur-react-toulon)
+- [Développeur Next.js Toulon](https://benoit-lecourtier.vercel.app/developpeur-nextjs-toulon)
+- [Développeur Astro JS Toulon](https://benoit-lecourtier.vercel.app/developpeur-astro-toulon)
+- [TIH / RSE / Agefiph](https://benoit-lecourtier.vercel.app/tih-rse-agefiph-toulon)
+- [À propos](https://benoit-lecourtier.vercel.app/a-propos)
+- [Contact](https://benoit-lecourtier.vercel.app/contact)

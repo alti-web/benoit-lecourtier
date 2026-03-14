@@ -19,7 +19,107 @@ const { title, description = 'Développeur web freelance à Toulon — React, Ne
     <meta name="description" content={description} />
     <meta name="keywords" content="développeur toulon, freelance toulon, astrojs toulon, reactjs toulon, next.js toulon, développeur web freelance var" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
     <title>{title}</title>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://benoit-lecourtier.vercel.app/#website",
+          "url": "https://benoit-lecourtier.vercel.app",
+          "name": "Benoit Lecourtier — Développeur Web Freelance",
+          "description": "Développeur web freelance à Toulon spécialisé React.js, Next.js et Astro JS.",
+          "inLanguage": "fr-FR"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://benoit-lecourtier.vercel.app/#person",
+          "name": "Benoit Lecourtier",
+          "url": "https://benoit-lecourtier.vercel.app",
+          "image": "https://benoit-lecourtier.vercel.app/652295112_26561412926797987_2650508981147995043_n.jpg",
+          "jobTitle": "Développeur Web Frontend Freelance",
+          "description": "Développeur web freelance spécialisé React.js, Next.js et Astro JS, basé à Toulon.",
+          "knowsAbout": ["React.js", "Next.js", "Astro JS", "TypeScript", "Tailwind CSS", "JavaScript", "HTML", "CSS"],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Toulon",
+            "addressRegion": "Var",
+            "postalCode": "83000",
+            "addressCountry": "FR"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://benoit-lecourtier.vercel.app/#business",
+          "name": "Benoit Lecourtier — Développeur Web Freelance",
+          "url": "https://benoit-lecourtier.vercel.app",
+          "image": "https://benoit-lecourtier.vercel.app/652295112_26561412926797987_2650508981147995043_n.jpg",
+          "description": "Développeur web freelance à Toulon. Création de sites et applications web avec React.js, Next.js et Astro JS.",
+          "priceRange": "€€",
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 43.1242,
+              "longitude": 5.928
+            },
+            "geoRadius": "50000"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Toulon",
+            "addressRegion": "Var",
+            "postalCode": "83000",
+            "addressCountry": "FR"
+          },
+          "founder": { "@id": "https://benoit-lecourtier.vercel.app/#person" },
+          "knowsAbout": ["Développement web", "React.js", "Next.js", "Astro JS", "TypeScript", "Applications web", "Sites vitrines"],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Services de développement web",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Développement d'applications web React.js",
+                  "description": "SPAs, dashboards, apps métier avec React.js et TypeScript"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Développement Next.js full-stack",
+                  "description": "Sites et applications avec SSR, SSG, API Routes et App Router"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Création de sites Astro JS",
+                  "description": "Sites vitrines ultra-rapides, blogs et landing pages avec Astro"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebPage",
+          "url": new URL(Astro.url.pathname, Astro.site).href,
+          "name": title,
+          "description": description,
+          "isPartOf": { "@id": "https://benoit-lecourtier.vercel.app/#website" },
+          "about": { "@id": "https://benoit-lecourtier.vercel.app/#person" },
+          "inLanguage": "fr-FR"
+        }
+      ]
+    })} />
   </head>
   <body>
     <Header />
