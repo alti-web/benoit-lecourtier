@@ -17,13 +17,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <div class="space-y-6">
             <div>
-              <h3 class="text-sm font-semibold uppercase tracking-wider text-accent dark:text-blue-400 mb-2">Email</h3>
-              <a href="mailto:contact@lecourtier.net" class="text-text dark:text-text-dark hover:text-accent dark:hover:text-blue-400 transition-colors">
-                contact@lecourtier.net
-              </a>
-            </div>
-
-            <div>
               <h3 class="text-sm font-semibold uppercase tracking-wider text-accent dark:text-blue-400 mb-2">Localisation</h3>
               <p class="text-text-muted dark:text-text-dark-muted">Toulon, Var (83) — France</p>
             </div>
@@ -40,7 +33,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Form -->
         <div class="fade-in" style="transition-delay: 100ms">
-          <form class="space-y-6" action="#" method="POST">
+          <form class="space-y-6" action="https://formsubmit.co/benoit@lecourtier.net" method="POST">
+            <input type="hidden" name="_subject" value="Nouveau message depuis lecourtier.net" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://benoit-lecourtier.vercel.app/contact" />
             <div>
               <label for="name" class="block text-sm font-medium mb-2">Nom</label>
               <input
