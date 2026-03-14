@@ -65,7 +65,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="section-padding">
     <div class="container-narrow">
       <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Pourquoi travailler avec moi ?</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 gap-8">
         <!-- Excellence technique -->
         <div class="fade-in bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-blue-500/30 transition-colors">
           <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
@@ -98,6 +98,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             La démarche est transparente et sans lourdeur pour votre service comptable.
           </p>
         </div>
+
+        <!-- Communication 100 % écrite -->
+        <div class="fade-in bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-purple-500/30 transition-colors" style="transition-delay: 300ms">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-text-dark">Communication 100 % écrite, 100 % efficace</h3>
+          <p class="text-text-dark-muted leading-relaxed">
+            Mon handicap affecte la parole, pas les compétences. Tous nos échanges se font par écrit : email, messagerie instantanée, outils de gestion de projet (Notion, Trello, Slack...). Loin d'être une limite, c'est un avantage concret : chaque échange est tracé, chaque décision documentée, zéro malentendu. Vos briefs, validations et retours restent accessibles à tout moment dans un historique clair.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -115,7 +126,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-lg">1</div>
             <div>
               <h3 class="text-lg font-semibold text-text-dark mb-1">Le brief</h3>
-              <p class="text-text-dark-muted leading-relaxed">Nous validons ensemble votre besoin technique et je vous fournis un devis classique.</p>
+              <p class="text-text-dark-muted leading-relaxed">Par email ou messagerie, nous cadrons ensemble votre besoin technique et je vous fournis un devis détaillé.</p>
             </div>
           </div>
 
@@ -158,10 +169,42 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="text-text-dark-muted text-lg mb-10 leading-relaxed">
           Discutons de vos besoins techniques et voyons comment nous pouvons collaborer.
         </p>
-        <a href="/contact" class="btn-primary text-lg px-8 py-4">Parler de mon projet</a>
+        <a href="/contact" class="btn-primary text-lg px-8 py-4">Lancer mon projet</a>
       </div>
     </div>
   </section>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment se déroule la communication avec un développeur TIH ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tous les échanges se font par écrit (email, chat, outils collaboratifs comme Notion, Trello ou Slack). Chaque décision est documentée et traçable, ce qui garantit clarté et efficacité tout au long du projet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'un Travailleur Indépendant Handicapé (TIH) ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un TIH est un freelance disposant d'une Reconnaissance en Qualité de Travailleur Handicapé (RQTH). Les entreprises de plus de 20 salariés qui font appel à un TIH peuvent déduire jusqu'à 30 % du coût de la prestation de leur contribution Agefiph ou FIPHFP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment fonctionne la déduction Agefiph avec un prestataire TIH ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depuis la loi Macron de 2016, les entreprises collaborant avec un TIH peuvent déduire jusqu'à 30 % du coût de la main-d'œuvre (hors matériel) de leur Obligation d'Emploi des Travailleurs Handicapés (OETH). Il suffit de fournir la facture et l'attestation RQTH lors de la déclaration annuelle DOETH."
+        }
+      }
+    ]
+  })} />
 
   <!-- Logos Agefiph / FIPHFP -->
   <section class="py-12 px-6 border-t border-gray-800">
