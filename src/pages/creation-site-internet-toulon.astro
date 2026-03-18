@@ -1,0 +1,395 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const piliers = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/></svg>`,
+    title: 'Sur mesure, pas du template',
+    description: 'Chaque site est développé en React JS. Pas de thème recyclé, pas de page builder. Du code propre, rapide, qui vous ressemble.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>`,
+    title: 'Tout vous appartient',
+    description: 'Le code, le design, l\'hébergement, le nom de domaine : tout est à votre nom, sous votre contrôle. Si on arrête de travailler ensemble demain, vous repartez avec tout.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>`,
+    title: 'Développeur local, pas agence',
+    description: 'Je suis Benoit, freelance à Toulon. Vous échangez directement avec celui qui code votre site. Pas de commercial, pas d\'intermédiaire.',
+  },
+];
+---
+
+<BaseLayout
+  title="Création de site internet à Toulon | Site sur mesure React JS — Benoit Lecourtier"
+  description="Développeur freelance à Toulon. Site internet sur mesure en React JS, propriété totale du client. Premier site gratuit. Stratégie multi-sites dès 79 €HT/mois."
+>
+
+  <!-- BLOC 1 — Hero -->
+  <section class="section-padding pt-32 md:pt-44 relative overflow-hidden">
+    <!-- Fond stylisé -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%239C92AC&quot; fill-opacity=&quot;0.4&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    <div class="container-narrow relative">
+      <div class="max-w-4xl fade-in">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          Votre site internet sur mesure à <span class="text-blue-400">Toulon</span> — et il vous appartient. <span class="text-blue-400">Vraiment.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-text-dark-muted leading-relaxed mb-10 max-w-3xl">
+          Pas de WordPress. Pas de template. Du React&nbsp;JS taillé pour votre activité.
+          Et si vous n'avez besoin que d'un seul site… <strong class="text-text-dark">c'est gratuit.</strong>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#formulaire" data-choice="gratuit" class="btn-primary text-lg px-8 py-4 justify-center cta-hero text-center leading-snug">
+            Je veux mon site gratuit, 0€ sans aucun engagement, en être propriétaire &amp; avoir la main dessus à 100%
+          </a>
+          <a href="#formulaire" data-choice="strategie" class="btn-secondary text-lg px-8 py-4 justify-center cta-hero">
+            Découvrir la stratégie 1&nbsp;site/semaine
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOC 2 — La promesse (3 piliers) -->
+  <section class="section-padding bg-gray-900/50 border-y border-gray-800">
+    <div class="container-narrow">
+      <div class="grid md:grid-cols-3 gap-8">
+        {piliers.map((p, i) => (
+          <div class="fade-in bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 hover:border-blue-400/30 transition-colors" style={`transition-delay: ${i * 100}ms`}>
+            <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-5" set:html={p.icon} />
+            <h2 class="text-xl font-bold text-text-dark mb-3">{p.title}</h2>
+            <p class="text-text-dark-muted leading-relaxed">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOC 3 — Les deux offres -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Deux chemins, une même exigence</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+        <!-- Carte gauche — Site gratuit -->
+        <div class="fade-in bg-gray-800/50 rounded-2xl p-8 md:p-10 border border-gray-700/50 flex flex-col" style="transition-delay: 80ms">
+          <h3 class="text-2xl font-bold text-text-dark mb-2">Un site, c'est tout ce qu'il me faut</h3>
+          <div class="flex items-baseline gap-2 mb-6">
+            <span class="text-5xl font-extrabold text-blue-400">0&nbsp;€</span>
+          </div>
+          <p class="text-text-dark-muted leading-relaxed mb-6">
+            Vous avez une activité, vous avez besoin d'un site professionnel. Je vous le crée sur mesure en React&nbsp;JS, gratuitement. Pas de piège, pas d'abonnement caché. Votre site, votre propriété.
+          </p>
+          <p class="text-sm text-text-dark-muted mb-8">
+            <span class="text-blue-400 font-medium">Idéal pour :</span> artisan, indépendant, profession libérale qui démarre ou qui veut remplacer un vieux site.
+          </p>
+          <div class="mt-auto">
+            <a href="#formulaire" data-choice="gratuit" class="btn-primary w-full justify-center cta-hero">
+              Demander mon site gratuit
+            </a>
+          </div>
+        </div>
+
+        <!-- Carte droite — Stratégie (mise en avant) -->
+        <div class="fade-in relative bg-gray-800/50 rounded-2xl p-8 md:p-10 border-2 border-blue-400/50 flex flex-col" style="transition-delay: 160ms">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-500 text-white text-sm font-bold rounded-full">
+            Recommandé
+          </div>
+          <h3 class="text-2xl font-bold text-text-dark mb-2">Je veux une stratégie digitale complète</h3>
+          <div class="flex items-baseline gap-2 mb-2">
+            <span class="text-5xl font-extrabold text-blue-400">79&nbsp;€</span>
+            <span class="text-text-dark-muted">HT / mois</span>
+          </div>
+          <p class="text-sm text-emerald-400 font-medium mb-6">1er mois offert</p>
+          <p class="text-text-dark-muted leading-relaxed mb-6">
+            1 nouveau site par semaine. 4 sites par mois. Une galaxie de pages qui travaillent pour votre référencement, votre crédibilité, et votre visibilité sur Toulon et au-delà.
+          </p>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3 text-sm text-text-dark-muted">
+              <span class="text-blue-400 mt-0.5 flex-shrink-0">&#10003;</span>
+              Site principal + sites satellites
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-dark-muted">
+              <span class="text-blue-400 mt-0.5 flex-shrink-0">&#10003;</span>
+              Tous en React JS, tous à votre nom
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-dark-muted">
+              <span class="text-blue-400 mt-0.5 flex-shrink-0">&#10003;</span>
+              Stratégie SEO intégrée
+            </li>
+          </ul>
+          <div class="mt-auto">
+            <a href="#formulaire" data-choice="strategie" class="btn-primary w-full justify-center cta-hero">
+              Recevoir ma stratégie 1&nbsp;site/semaine
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOC 4 — Réassurance & crédibilité -->
+  <section class="section-padding bg-gray-900/50 border-y border-gray-800">
+    <div class="container-narrow">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 fade-in">Pourquoi ce modèle&nbsp;?</h2>
+        <div class="fade-in text-text-dark-muted leading-relaxed space-y-4" style="transition-delay: 80ms">
+          <p>
+            Je suis convaincu qu'un bon site ne devrait pas coûter 3&nbsp;000&nbsp;€. La plupart des agences vous vendent un WordPress avec un thème à 59&nbsp;$ et vous facturent la mise en page.
+          </p>
+          <p>
+            Moi, je code en React&nbsp;JS parce que c'est plus rapide, plus léger, et ça vous appartient vraiment — pas de licence, pas de plugin qui expire, pas de CMS qui vous retient en otage.
+          </p>
+          <p>
+            Le site gratuit, c'est ma façon de prouver que ça marche. La stratégie à 79&nbsp;€, c'est pour ceux qui veulent aller plus loin.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 mt-12">
+          <div class="fade-in text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/30" style="transition-delay: 100ms">
+            <div class="text-3xl font-extrabold text-blue-400 mb-1">+40</div>
+            <div class="text-sm text-text-dark-muted">missions réalisées</div>
+          </div>
+          <div class="fade-in text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/30" style="transition-delay: 180ms">
+            <div class="text-lg font-bold text-text-dark mb-1">React JS · Next.js · Astro</div>
+            <div class="text-sm text-text-dark-muted">technologies utilisées</div>
+          </div>
+          <div class="fade-in text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/30" style="transition-delay: 260ms">
+            <div class="text-lg font-bold text-text-dark mb-1">Toulon, Var</div>
+            <div class="text-sm text-text-dark-muted">clients dans toute la France</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOC 5 — Le formulaire -->
+  <section id="formulaire" class="section-padding scroll-mt-24">
+    <div class="container-narrow">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center fade-in">On en parle&nbsp;?</h2>
+
+        <form
+          id="creation-form"
+          class="space-y-6 fade-in"
+          style="transition-delay: 80ms"
+          action="https://formsubmit.co/benoit@lecourtier.net"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Nouvelle demande — Création site internet Toulon" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://lecourtier.net/creation-site-internet-toulon" />
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_honey" style="display:none" />
+
+          <!-- Choix initial -->
+          <fieldset>
+            <legend class="block text-sm font-medium mb-4">Que recherchez-vous&nbsp;?</legend>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <label class="radio-card cursor-pointer">
+                <input type="radio" name="offre" value="Site unique gratuit" required class="sr-only peer" />
+                <div class="p-4 rounded-xl border-2 border-gray-700 bg-gray-800/50 peer-checked:border-blue-400 peer-checked:bg-blue-500/10 transition-all">
+                  <div class="font-semibold text-text-dark mb-1">Je veux mon site unique gratuit</div>
+                  <div class="text-sm text-text-dark-muted">Un site sur mesure, 0&nbsp;€</div>
+                </div>
+              </label>
+              <label class="radio-card cursor-pointer">
+                <input type="radio" name="offre" value="Stratégie 1 site/semaine" class="sr-only peer" />
+                <div class="p-4 rounded-xl border-2 border-gray-700 bg-gray-800/50 peer-checked:border-blue-400 peer-checked:bg-blue-500/10 transition-all">
+                  <div class="font-semibold text-text-dark mb-1">Je veux la stratégie 1&nbsp;site/semaine</div>
+                  <div class="text-sm text-text-dark-muted">79&nbsp;€HT/mois — 1er mois offert, puis 0 engagement</div>
+                </div>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Champs communs -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="nom" class="block text-sm font-medium mb-2">Nom / Prénom</label>
+              <input
+                type="text" id="nom" name="nom" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-text-dark focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+                placeholder="Votre nom"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <input
+                type="email" id="email" name="email" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-text-dark focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+                placeholder="votre@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="telephone" class="block text-sm font-medium mb-2">Téléphone <span class="text-text-dark-muted">(optionnel)</span></label>
+              <input
+                type="tel" id="telephone" name="telephone"
+                class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-text-dark focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+                placeholder="06 12 34 56 78"
+              />
+            </div>
+            <div>
+              <label for="activite" class="block text-sm font-medium mb-2">Votre activité</label>
+              <input
+                type="text" id="activite" name="activite" required
+                class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-text-dark focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+                placeholder="Ex : plombier, coach sportif…"
+              />
+            </div>
+          </div>
+
+          <!-- Site existant -->
+          <fieldset>
+            <legend class="block text-sm font-medium mb-3">Avez-vous déjà un site&nbsp;?</legend>
+            <div class="flex gap-4">
+              <label class="cursor-pointer">
+                <input type="radio" name="site_existant" value="Oui" class="sr-only peer" />
+                <span class="px-5 py-2 rounded-lg border-2 border-gray-700 bg-gray-800/50 peer-checked:border-blue-400 peer-checked:bg-blue-500/10 transition-all inline-block text-sm font-medium">Oui</span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="site_existant" value="Non" class="sr-only peer" />
+                <span class="px-5 py-2 rounded-lg border-2 border-gray-700 bg-gray-800/50 peer-checked:border-blue-400 peer-checked:bg-blue-500/10 transition-all inline-block text-sm font-medium">Non</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- URL conditionnelle -->
+          <div id="url-field" class="hidden">
+            <label for="url_actuelle" class="block text-sm font-medium mb-2">URL de votre site actuel</label>
+            <input
+              type="url" id="url_actuelle" name="url_actuelle"
+              class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-text-dark focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+              placeholder="https://www.monsite.fr"
+            />
+          </div>
+
+          <!-- Champ conditionnel stratégie -->
+          <div id="objectif-field" class="hidden">
+            <label for="objectif" class="block text-sm font-medium mb-2">En quelques mots, quel est votre objectif principal&nbsp;?</label>
+            <textarea
+              id="objectif" name="objectif" rows="3"
+              class="w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-800 text-text-dark focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all resize-y"
+              placeholder="Plus de visibilité locale, conquérir un nouveau marché…"
+            ></textarea>
+          </div>
+
+          <!-- Bouton d'envoi -->
+          <button id="submit-btn" type="submit" class="btn-primary w-full justify-center text-lg py-4">
+            Envoyer ma demande
+          </button>
+
+          <p class="text-xs text-text-dark-muted text-center">
+            Vos données sont uniquement utilisées pour vous recontacter. Aucun spam.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maillage interne -->
+  <section class="pb-24 px-6">
+    <div class="container-narrow text-center fade-in">
+      <p class="text-text-dark-muted">
+        <a href="/" class="text-blue-400 hover:underline">Accueil</a> ·
+        <a href="/developpeur-react-toulon" class="text-blue-400 hover:underline">Développeur React Toulon</a> ·
+        <a href="/developpeur-nextjs-toulon" class="text-blue-400 hover:underline">Développeur Next.js Toulon</a> ·
+        <a href="/developpeur-astro-toulon" class="text-blue-400 hover:underline">Développeur Astro Toulon</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Schema.org LocalBusiness + Service -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Benoit Lecourtier — Développeur Web Freelance",
+        "url": "https://lecourtier.net/creation-site-internet-toulon",
+        "description": "Création de sites internet sur mesure à Toulon en React JS. Propriété totale du client. Premier site gratuit.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toulon",
+          "addressRegion": "Var",
+          "postalCode": "83000",
+          "addressCountry": "FR"
+        },
+        "areaServed": { "@type": "City", "name": "Toulon" },
+        "priceRange": "€"
+      },
+      {
+        "@type": "Service",
+        "name": "Création de site internet sur mesure",
+        "provider": { "@type": "Person", "name": "Benoit Lecourtier" },
+        "areaServed": { "@type": "City", "name": "Toulon" },
+        "description": "Site internet sur mesure en React JS à Toulon. Technologie moderne, propriété totale du client, premier site gratuit.",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Site unique gratuit",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "description": "Un site internet sur mesure en React JS, entièrement gratuit."
+          },
+          {
+            "@type": "Offer",
+            "name": "Stratégie 1 site par semaine",
+            "price": "79",
+            "priceCurrency": "EUR",
+            "description": "4 sites par mois en React JS pour une stratégie digitale complète. Premier mois offert."
+          }
+        ]
+      }
+    ]
+  })} />
+
+  <script>
+    // Pré-sélection depuis les CTAs hero
+    document.querySelectorAll('.cta-hero').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const choice = btn.getAttribute('data-choice');
+        const radios = document.querySelectorAll<HTMLInputElement>('input[name="offre"]');
+        if (choice === 'gratuit' && radios[0]) radios[0].checked = true;
+        if (choice === 'strategie' && radios[1]) radios[1].checked = true;
+        updateForm();
+      });
+    });
+
+    // Gestion conditionnelle du formulaire
+    const offreRadios = document.querySelectorAll<HTMLInputElement>('input[name="offre"]');
+    const siteRadios = document.querySelectorAll<HTMLInputElement>('input[name="site_existant"]');
+
+    offreRadios.forEach((r) => r.addEventListener('change', updateForm));
+    siteRadios.forEach((r) => r.addEventListener('change', updateSiteField));
+
+    function updateForm() {
+      const selected = (document.querySelector<HTMLInputElement>('input[name="offre"]:checked'))?.value;
+      const objectifField = document.getElementById('objectif-field');
+      const submitBtn = document.getElementById('submit-btn');
+
+      if (selected === 'Stratégie 1 site/semaine') {
+        objectifField?.classList.remove('hidden');
+        if (submitBtn) submitBtn.textContent = 'Recevoir ma stratégie personnalisée';
+      } else {
+        objectifField?.classList.add('hidden');
+        if (submitBtn) submitBtn.textContent = 'Envoyer ma demande de site gratuit';
+      }
+    }
+
+    function updateSiteField() {
+      const val = (document.querySelector<HTMLInputElement>('input[name="site_existant"]:checked'))?.value;
+      const urlField = document.getElementById('url-field');
+      if (val === 'Oui') {
+        urlField?.classList.remove('hidden');
+      } else {
+        urlField?.classList.add('hidden');
+      }
+    }
+  </script>
+
+</BaseLayout>
