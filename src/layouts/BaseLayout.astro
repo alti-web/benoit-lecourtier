@@ -24,6 +24,15 @@ const { title, description = 'Développeur web freelance à Toulon — React, Ne
     <meta name="google-site-verification" content="cTPc02yWAU3w1yvyhKx7pT8m6ULNnAfWRzE6e-7Rhug" />
     <title>{title}</title>
 
+    <!-- Google Ads (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-864211062" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-864211062');
+    </script>
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
