@@ -32,6 +32,21 @@ const { title, description = 'Développeur web freelance à Toulon — React, Ne
       gtag('js', new Date());
       gtag('config', 'AW-864211062');
     </script>
+    <!-- Google Ads event - delayed navigation helper -->
+    <script is:inline>
+      function gtagSendEvent(url) {
+        var callback = function () {
+          if (typeof url === 'string') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'nous_contacter', {
+          'event_callback': callback,
+          'event_timeout': 2000,
+        });
+        return false;
+      }
+    </script>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
