@@ -5,27 +5,69 @@ import TechStack from '../components/TechStack.astro';
 
 const projects = [
   {
-    title: 'Dashboard Analytics',
-    description: 'Application de visualisation de données en temps réel pour une PME toulonnaise.',
+    title: 'Dashboard Analytics SaaS',
+    description: 'Plateforme de visualisation de données en temps réel avec graphiques interactifs, filtres dynamiques et export PDF. Intégration API REST tierce pour la collecte de données.',
     image: '/projects/placeholder.svg',
-    techs: ['React', 'Next.js', 'Tailwind'],
-    metric: 'Score Lighthouse 99',
+    techs: ['React 18', 'Next.js 14', 'TypeScript', 'Tailwind CSS', 'Recharts', 'API REST'],
+    context: 'SaaS B2B — Analytics',
+    duration: '4 mois',
+    team: 'Equipe de 3',
+    metric: 'Lighthouse 99',
     url: '#',
   },
   {
-    title: 'Site vitrine Artisan',
-    description: 'Site ultra-performant pour un artisan local avec zéro JavaScript côté client.',
+    title: 'Plateforme E-commerce',
+    description: 'Front-end e-commerce headless avec panier, paiement Stripe, gestion de stock temps réel et back-office intégré. SSR pour le SEO produit.',
     image: '/projects/placeholder.svg',
-    techs: ['Astro', 'Tailwind', 'MDX'],
-    metric: '0 KB de JS client',
+    techs: ['Next.js 14', 'React 18', 'TypeScript', 'Zustand', 'Tailwind CSS', 'Stripe API', 'GraphQL'],
+    context: 'E-commerce — Retail',
+    duration: '6 mois',
+    team: 'Equipe de 5',
+    metric: 'TTI < 1.2s',
     url: '#',
   },
   {
     title: 'App de réservation',
-    description: 'Interface de réservation interactive avec gestion de calendrier avancée.',
+    description: 'Interface de réservation interactive avec calendrier avancé, gestion multi-créneaux et notifications. Composants Syncfusion personnalisés.',
     image: '/projects/placeholder.svg',
-    techs: ['React', 'TypeScript', 'Syncfusion'],
+    techs: ['React 18', 'TypeScript', 'Syncfusion', 'Redux Toolkit', 'API REST'],
+    context: 'SaaS — Booking',
+    duration: '3 mois',
+    team: 'Equipe de 4',
     metric: 'TTI < 200ms',
+    url: '#',
+  },
+  {
+    title: 'Site vitrine performant',
+    description: 'Site multi-pages avec blog MDX, formulaire de contact et scoring Lighthouse parfait. Zéro JavaScript côté client grâce à Astro.',
+    image: '/projects/placeholder.svg',
+    techs: ['Astro 4', 'Tailwind CSS', 'MDX', 'Cloudflare Pages'],
+    context: 'Site vitrine — Artisanat',
+    duration: '3 semaines',
+    team: 'Solo',
+    metric: '0 KB JS client',
+    url: '#',
+  },
+  {
+    title: 'Back-office RH',
+    description: 'Application interne de gestion RH : tableaux de bord, gestion des congés, organigramme interactif. Intégration SSO et gestion de rôles.',
+    image: '/projects/placeholder.svg',
+    techs: ['React 18', 'Next.js 14', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'API REST'],
+    context: 'App métier — RH',
+    duration: '5 mois',
+    team: 'Equipe de 6',
+    metric: '50+ composants',
+    url: '#',
+  },
+  {
+    title: 'Landing pages marketing',
+    description: 'Série de landing pages A/B testées avec animations, formulaires multi-étapes et tracking analytics avancé. Optimisation Core Web Vitals.',
+    image: '/projects/placeholder.svg',
+    techs: ['Astro 4', 'React 18', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    context: 'Marketing — Lead gen',
+    duration: '2 mois',
+    team: 'Equipe de 2',
+    metric: 'CWV 100%',
     url: '#',
   },
 ];
@@ -177,19 +219,188 @@ const steps = [
           Voir tous les projets &rarr;
         </a>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, i) => (
-          <ProjectCard {...project} delay={i * 100} />
+          <ProjectCard {...project} delay={i * 80} />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack Section -->
-  <section class="section-padding bg-gray-50 dark:bg-gray-900/50 transition-colors" id="stack">
+  <!-- Compétences techniques Section -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-900/50 transition-colors" id="competences">
     <div class="container-narrow">
-      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center fade-in">Stack technique</h2>
-      <TechStack />
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center fade-in">Compétences techniques</h2>
+      <p class="text-center text-text-muted dark:text-text-dark-muted mb-12 fade-in max-w-2xl mx-auto">Matrice de compétences structurée pour faciliter le matching mission.</p>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Maîtrisé -->
+        <div class="fade-in">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            <h3 class="text-lg font-semibold">Maîtrisé</h3>
+            <span class="text-xs text-text-muted dark:text-text-dark-muted">+3 ans de pratique intensive</span>
+          </div>
+          <div class="space-y-2">
+            {[
+              { category: 'Frontend', items: ['React 18+', 'Next.js 14+', 'TypeScript', 'JavaScript ES6+'] },
+              { category: 'Styling', items: ['Tailwind CSS', 'CSS3 / Responsive', 'CSS Modules'] },
+              { category: 'State', items: ['Redux Toolkit', 'Zustand', 'React Context'] },
+              { category: 'Outils', items: ['Git / Git Flow', 'Vite', 'npm / pnpm'] },
+              { category: 'Méthodologie', items: ['Agile / Scrum', 'Code Review / PR', 'CI/CD'] },
+            ].map((group) => (
+              <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 border border-gray-100 dark:border-gray-700/50">
+                <span class="text-xs font-semibold uppercase tracking-wider text-green-600 dark:text-green-400">{group.category}</span>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  {group.items.map((item) => (
+                    <span class="text-xs font-medium bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 px-2 py-1 rounded-md">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Confirmé -->
+        <div class="fade-in" style="transition-delay: 100ms">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+            <h3 class="text-lg font-semibold">Confirmé</h3>
+            <span class="text-xs text-text-muted dark:text-text-dark-muted">1-3 ans, projets livrés</span>
+          </div>
+          <div class="space-y-2">
+            {[
+              { category: 'Frontend', items: ['Astro 4', 'Qwik', 'Solid.js'] },
+              { category: 'UI', items: ['Syncfusion', 'shadcn/ui', 'Framer Motion'] },
+              { category: 'API', items: ['GraphQL', 'API REST', 'tRPC'] },
+              { category: 'Testing', items: ['Jest', 'React Testing Library', 'Cypress'] },
+              { category: 'DevOps', items: ['Docker', 'Vercel', 'Cloudflare Pages', 'GitHub Actions'] },
+            ].map((group) => (
+              <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 border border-gray-100 dark:border-gray-700/50">
+                <span class="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">{group.category}</span>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  {group.items.map((item) => (
+                    <span class="text-xs font-medium bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 px-2 py-1 rounded-md">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Notions -->
+        <div class="fade-in" style="transition-delay: 200ms">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+            <h3 class="text-lg font-semibold">Notions</h3>
+            <span class="text-xs text-text-muted dark:text-text-dark-muted">Bases solides, montée rapide</span>
+          </div>
+          <div class="space-y-2">
+            {[
+              { category: 'Backend', items: ['Node.js', 'Express', 'Prisma'] },
+              { category: 'Mobile', items: ['React Native', 'Expo'] },
+              { category: 'BDD', items: ['PostgreSQL', 'MongoDB', 'Supabase'] },
+              { category: 'CMS', items: ['Strapi', 'Contentful', 'Sanity'] },
+              { category: 'Autres', items: ['htmx', 'Web Components', 'PWA'] },
+            ].map((group) => (
+              <div class="bg-white dark:bg-gray-800/50 rounded-lg p-4 border border-gray-100 dark:border-gray-700/50">
+                <span class="text-xs font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">{group.category}</span>
+                <div class="flex flex-wrap gap-1.5 mt-2">
+                  {group.items.map((item) => (
+                    <span class="text-xs font-medium bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-400 px-2 py-1 rounded-md">{item}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fiabilité & Intégration équipe -->
+  <section class="section-padding" id="fiabilite">
+    <div class="container-narrow">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center fade-in">Fiabilité & intégration en équipe</h2>
+      <p class="text-center text-text-muted dark:text-text-dark-muted mb-12 fade-in max-w-2xl mx-auto">Un profil opérationnel dès le jour 1, habitué aux contextes client exigeants.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {[
+          { value: '8+', label: "ans d'expérience", icon: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>` },
+          { value: '40+', label: 'missions réalisées', icon: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>` },
+          { value: '5/5', label: 'satisfaction client', icon: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69l1.519-4.674z"/></svg>` },
+          { value: '2-6', label: 'mois par mission (moy.)', icon: `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>` },
+        ].map((stat, i) => (
+          <div class="fade-in text-center p-6 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-100 dark:border-gray-700/50" style={`transition-delay: ${i * 80}ms`}>
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 text-accent dark:text-blue-400 mb-3" set:html={stat.icon} />
+            <div class="text-3xl font-bold text-accent dark:text-blue-400 mb-1">{stat.value}</div>
+            <div class="text-sm text-text-muted dark:text-text-dark-muted">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Pratiques collaboratives -->
+        <div class="fade-in bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-100 dark:border-gray-700/50">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 flex items-center justify-center text-accent dark:text-blue-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="font-semibold">Pratiques collaboratives</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-text-muted dark:text-text-dark-muted">
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Git Flow, branches feature, pull requests</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Code review systématique</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Daily standups, sprint planning, rétros</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Documentation technique (Notion, Confluence)</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Communication Slack / Teams / Jira</li>
+          </ul>
+        </div>
+
+        <!-- Contextes d'intervention -->
+        <div class="fade-in bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-100 dark:border-gray-700/50" style="transition-delay: 100ms">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 flex items-center justify-center text-accent dark:text-blue-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M3.54 7.46l16.92 0a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3.54a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/></svg>
+            </div>
+            <h3 class="font-semibold">Contextes d'intervention</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-text-muted dark:text-text-dark-muted">
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Equipes de 2 à 10 développeurs</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Missions en régie et au forfait</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Startups, PME et grands comptes</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Secteurs : SaaS, e-commerce, RH, santé</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Montée en compétence rapide sur nouveaux contextes</li>
+          </ul>
+        </div>
+
+        <!-- Disponibilité -->
+        <div class="fade-in bg-white dark:bg-gray-800/50 rounded-xl p-6 border border-gray-100 dark:border-gray-700/50" style="transition-delay: 200ms">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-accent/10 dark:bg-blue-400/10 flex items-center justify-center text-accent dark:text-blue-400">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="font-semibold">Disponibilité & engagement</h3>
+          </div>
+          <ul class="space-y-2 text-sm text-text-muted dark:text-text-dark-muted">
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Disponible immédiatement</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Toulon + full remote</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Temps plein ou mi-temps</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Formation continue (veille techno active)</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span>Engagement qualité, deadlines respectés</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Témoignage -->
+      <div class="fade-in mt-12 bg-gradient-to-r from-accent/5 to-blue-400/5 dark:from-accent/10 dark:to-blue-400/10 rounded-xl p-8 border border-accent/10 dark:border-blue-400/10">
+        <blockquote class="text-center">
+          <p class="text-lg italic text-text dark:text-text-dark mb-4">"Benoit s'est intégré instantanément dans l'équipe. Autonome, force de proposition, et toujours dans les délais. Un profil rare qu'on redemande systématiquement."</p>
+          <footer class="text-sm text-text-muted dark:text-text-dark-muted">
+            <strong>Directeur technique</strong> — Mission SaaS B2B, 6 mois
+          </footer>
+        </blockquote>
+      </div>
     </div>
   </section>
 
