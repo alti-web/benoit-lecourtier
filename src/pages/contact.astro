@@ -33,10 +33,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Form -->
         <div class="fade-in" style="transition-delay: 100ms">
-          <form class="space-y-6" action="https://formsubmit.co/benoit@lecourtier.net" method="POST">
-            <input type="hidden" name="_subject" value="Nouveau message depuis lecourtier.net" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://benoit-lecourtier.vercel.app/contact" />
+          <form class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="ba381790-1517-4d64-9295-a1f54769e4fd" />
+            <input type="hidden" name="subject" value="Nouveau message depuis lecourtier.net" />
+            <input type="hidden" name="redirect" value="https://lecourtier.net/contact" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
             <div>
               <label for="name" class="block text-sm font-medium mb-2">Nom</label>
               <input

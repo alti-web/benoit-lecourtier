@@ -174,14 +174,14 @@ const piliers = [
           id="creation-form"
           class="space-y-6 fade-in"
           style="transition-delay: 80ms"
-          action="https://formsubmit.co/benoit@lecourtier.net"
+          action="https://api.web3forms.com/submit"
           method="POST"
         >
-          <input type="hidden" name="_subject" value="Nouvelle demande — Création site internet Toulon" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://lecourtier.net/creation-site-internet-toulon" />
+          <input type="hidden" name="access_key" value="ba381790-1517-4d64-9295-a1f54769e4fd" />
+          <input type="hidden" name="subject" value="Nouvelle demande — Création site internet Toulon" />
+          <input type="hidden" name="redirect" value="https://lecourtier.net/creation-site-internet-toulon" />
           <!-- Honeypot anti-spam -->
-          <input type="text" name="_honey" style="display:none" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 
           <!-- Choix initial -->
           <fieldset>

@@ -137,10 +137,11 @@ const { title, description = 'Développeur web freelance à Toulon — React, Ne
       </button>
       <div id="callback-form" class="hidden absolute left-0 top-full mt-2 bg-gray-800 border border-gray-700 rounded-xl p-4 shadow-2xl w-72">
         <p class="text-sm text-gray-300 mb-3">Entrez votre numéro, je vous rappelle dans les minutes qui suivent.</p>
-        <form id="callback-form-el" action="https://formsubmit.co/benoit@lecourtier.net" method="POST" class="flex gap-2">
-          <input type="hidden" name="_subject" value="Demande de rappel immédiat" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="https://benoit-lecourtier.vercel.app/" />
+        <form id="callback-form-el" action="https://api.web3forms.com/submit" method="POST" class="flex gap-2">
+          <input type="hidden" name="access_key" value="ba381790-1517-4d64-9295-a1f54769e4fd" />
+          <input type="hidden" name="subject" value="Demande de rappel immédiat" />
+          <input type="hidden" name="redirect" value="https://lecourtier.net/" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
           <input
             type="tel"
             id="callback-phone"
